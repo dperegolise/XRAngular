@@ -1,0 +1,11 @@
+{
+  "name": "xlite.config.path",
+  "deps": [],
+  "constants": {
+    "ENVIRONMENT": {
+      "ENV": "x",
+      "API_PATH": "x",
+      "VERSION": "x"
+    }
+  }
+}
