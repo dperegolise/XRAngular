@@ -68,45 +68,11 @@
         <div class="row">
             <div class="col-md-9 col-sm-6 main-item main-news">
                 <h1>NEWS</h1>
-                <div class="news-item">
-                    <h4>SOME FAKE NEWS TITLE</h4>
-                    <p class="text-date">Jan 17 2017 11:39 PM EST</p>
-                    <p class="text-muted">Discuss server going-ons</p>
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                </div>
-                <div class="news-item">
-                    <h4>SOME FAKE NEWS TITLE</h4>
-                    <p class="text-date">Jan 17 2017 11:39 PM EST</p>
-                    <p class="text-muted">Discuss server going-ons</p>
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                </div>
-                <div class="news-item">
-                    <h4>SOME FAKE NEWS TITLE</h4>
-                    <p class="text-date">Jan 17 2017 11:39 PM EST</p>
-                    <p class="text-muted">Discuss server going-ons</p>
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                </div>
-                <div class="news-item">
-                    <h4>SOME FAKE NEWS TITLE</h4>
-                    <p class="text-date">Jan 17 2017 11:39 PM EST</p>
-                    <p class="text-muted">Discuss server going-ons</p>
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                </div>
-                <div class="news-item">
-                    <h4>SOME FAKE NEWS TITLE</h4>
-                    <p class="text-date">Jan 17 2017 11:39 PM EST</p>
-                    <p class="text-muted">Discuss server going-ons</p>
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
-                    A bunch of textA bunch of textA bunch of textA bunch of text
+                <div ng-repeat="post in home.posts track by post._id" class="news-item">
+                    <h4>{{post.title}}</h4>
+                    <p class="text-date">{{post.date}}</p>
+                    <p class="text-muted">{{post.description}}</p>
+                    {{post.content}}
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 main-item main-sidebar">

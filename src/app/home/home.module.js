@@ -4,5 +4,6 @@
  */
 angular.module('xlite.home', [
   'xlite.config',
-  'xlite.config.path'
+  'xlite.config.path',
+  'xlite.services.posts'
 ]);

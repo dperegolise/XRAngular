@@ -18,10 +18,11 @@ angular.module('xlite.home')
   }
 );
 
-function HomeController() {
+function HomeController(postsService) {
   'use strict';
 
   var vm = this;
+  vm.posts = [];
 
   activate();
 
@@ -29,6 +30,8 @@ function HomeController() {
    * fetches intervals
    */
   function activate() {
-
+    postsService.getAll().then(function(response) {
+      vm.posts = response;
+    });
   }
 }
