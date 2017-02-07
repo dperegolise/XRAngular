@@ -18,9 +18,9 @@
         onEnter: options.onEnter ? options.onEnter : [],
         onLeave: options.onLeave ? options.onLeave : [],
         onTick: options.onTick ? options.onTick : []
-      }
+      };
 
-      var options = $.extend( {}, defaults, options );
+      options = $.extend( {}, defaults, options );
 
       return this.each(function (i) {
 
@@ -29,7 +29,7 @@
         var $container = $(o.container);
         var mode = o.mode;
         var buffer = o.buffer;
-        var enters = leaves = 0;
+        var enters, leaves = 0;
         var inside = false;
 
         /* add listener to container */
@@ -49,7 +49,7 @@
             min = o.min();
           }
 
-          if(max == 0){
+          if(max === 0){
             max = (mode == 'vertical') ? $container.height() : $container.outerWidth() + $(element).outerWidth();
           }
 
@@ -61,7 +61,7 @@
               enters++;
 
               /* fire enter event */
-              $(element).trigger('scrollEnter', {position: position})
+              $(element).trigger('scrollEnter', {position: position});
               if($.isFunction(o.onEnter)){
                 o.onEnter(element, position);
               }
@@ -69,7 +69,7 @@
             }
 
             /* trigger tick event */
-            $(element).trigger('scrollTick', {position: position, inside: inside, enters: enters, leaves: leaves})
+            $(element).trigger('scrollTick', {position: position, inside: inside, enters: enters, leaves: leaves});
             if($.isFunction(o.onTick)){
               o.onTick(element, position, inside, enters, leaves);
             }
@@ -79,7 +79,7 @@
               inside = false;
               leaves++;
               /* trigger leave event */
-              $(element).trigger('scrollLeave', {position: position, leaves:leaves})
+              $(element).trigger('scrollLeave', {position: position, leaves:leaves});
 
               if($.isFunction(o.onLeave)){
                 o.onLeave(element, position);
@@ -91,7 +91,7 @@
       });
     }
 
-  })
+  });
 
 
 })( jQuery, window, document, undefined );

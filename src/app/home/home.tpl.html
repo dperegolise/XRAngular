@@ -70,8 +70,8 @@
                 <h1>NEWS</h1>
                 <div ng-repeat="post in home.posts track by post._id" class="news-item">
                     <h4>{{post.title}}</h4>
-                    <p class="text-date">{{post.date}}</p>
-                    <p class="text-muted">{{post.description}}</p>
+                    <p class="text-date"><b>{{post.user}}</b>: {{post.date}}</p>
+                    <p class="text-muted">Posted in "{{post.description}}"</p>
                     {{post.content}}
                 </div>
             </div>

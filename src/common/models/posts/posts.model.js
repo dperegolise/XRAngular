@@ -18,12 +18,13 @@ angular.module('xlite.models.posts', [])
      */
     Post.prototype.fromDTO = function(dto) {
       var vm = this;
-      vm.setOrFail(dto._id, '_id');
-      vm.setOrFail(dto.author, 'author');
-      vm.setOrFail(dto.title, 'title');
-      vm.setOrFail(dto.date, 'date');
-      vm.setOrFail(dto.description, 'description');
-      vm.setOrFail(dto.content, 'content');
+      vm.setOrFail(dto.DiscussionID, '_id');
+      vm.setOrFail(dto.InsertUserID, 'author');
+      vm.setOrFail(dto.Name, 'title');
+      vm.setOrFail(dto.DateInserted, 'date');
+      vm.setOrFail(dto.Category.Name, 'description');
+      vm.setOrFail(dto.User.Name, 'user');
+      vm.setOrFail(dto.Body, 'content');
     };
 
     /**

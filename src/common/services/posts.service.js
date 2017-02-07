@@ -45,6 +45,6 @@ angular.module('xlite.services.posts', [
 
     return {
       getAll: getAll
-    }
+    };
 
   });
